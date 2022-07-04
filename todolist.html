@@ -64,7 +64,9 @@
                 text-align: center;
                 margin:10px 0;
                 font-size: 25px;
+            
             }
+            .data__wrap--top  span {font-size:22px;}
             .totoList__wrap + .totoList__wrap {
                 margin-bottom:50px;
             }
@@ -168,93 +170,10 @@
             2022년 6월 28일 화요일
         </div>
 
-        <div class="totoList__wrap">
+        <div class="totoList__wrap"  id="all">
             <h2>목표<span>(2개 남음)</span></h2>
             <ul class="totolist">
-                <li>
-                    <div class="toto-item__wrap">
-                        <div class="todo-items">
-                            <input type="checkbox" id="todo00">
-                            <label for="todo00">할일 목록 입니다.</label>
-                        </div>
-                        <div class="todo-controll">
-                            <button type="button" class="btn-remove">X</button>
-                            <button type="button" class="btn-modify">M</button>
-                        </div>
-                    </div>
-                    <ul class="totolist__sub">
-                        <li>
-                            <div class="toto-item__wrap">
-                                <div class="todo-items">
-                                    <input type="checkbox" id="todo00">
-                                    <label for="todo00">할일 목록 입니다.</label>
-                                </div>
-                                <div class="todo-controll">
-                                    <button type="button" class="btn-remove">X</button>
-                                    <button type="button" class="btn-modify">M</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="toto-item__wrap">
-                                <div class="todo-items">
-                                    <input type="checkbox" id="todo00">
-                                    <label for="todo00">할일 목록 입니다.</label>
-                                </div>
-                                <div class="todo-controll">
-                                    <button type="button" class="btn-remove">X</button>
-                                    <button type="button" class="btn-modify">M</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="text">
-                            <button type="button" class="btn-sub-add">+</button>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <div class="toto-item__wrap">
-                        <div class="todo-items">
-                            <input type="checkbox" id="todo00">
-                            <label for="todo00">할일 목록 입니다.</label>
-                        </div>
-                        <div class="todo-controll">
-                            <button type="button" class="btn-remove">X</button>
-                            <button type="button" class="btn-modify">M</button>
-                        </div>
-                    </div>
-                    <ul class="totolist__sub">
-                        <li>
-                            <div class="toto-item__wrap">
-                                <div class="todo-items">
-                                    <input type="checkbox" id="todo00">
-                                    <label for="todo00">할일 목록 입니다.</label>
-                                </div>
-                                <div class="todo-controll">
-                                    <button type="button" class="btn-remove">X</button>
-                                    <button type="button" class="btn-modify">M</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="toto-item__wrap">
-                                <div class="todo-items">
-                                    <input type="checkbox" id="todo00">
-                                    <label for="todo00">할일 목록 입니다.</label>
-                                </div>
-                                <div class="todo-controll">
-                                    <button type="button" class="btn-remove">X</button>
-                                    <button type="button" class="btn-modify">M</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <input type="text">
-                            <button type="button" class="btn-sub-add">+</button>
-                        </li>
-                    </ul>
-                </li>
+            
             </ul>
         </div>
         <div class="totoList__wrap">
@@ -528,10 +447,10 @@
         </div>
         <div class="todoadd__wrap">
             <div class="todoadd__form">
-                <input type="text" class="input-todo">
+                <input type="text" class="input-todo"><button type="button" class="btn-remove">X</button>
                 <div class="todo-option">
-                    <input type="checkbox" > 기한없음
-                    <input type="datetime-local" > 날짜 선택
+                    <!-- <input type="checkbox" > 기한없음 -->
+                    <input type="date" id="seldata" class="data-select"> <label for="seldata">날짜 선택</label>
                     <input type="checkbox" > 1일전 알림
                     <input type="checkbox" > 당일전 알림
                 </div>
@@ -544,5 +463,6 @@
         </div>
     </div>
 </div>
+<script src="todo.js"></script>
 </body>
 </html>
