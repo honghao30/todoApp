@@ -37,6 +37,18 @@
     }
     //고유 아이디 생성
 
+    const btnaddtaskform = document.querySelector('.btn-add-todo');
+    const addtaskWrap = document.querySelector('.todoadd__wrap');
+    btnaddtaskform.addEventListener('click',()=> {
+        if(btnaddtaskform.innerText == "등록"){
+            btnaddtaskform.innerText = '닫기';
+            addtaskWrap.classList.add('is-open');
+        }else{
+            btnaddtaskform.innerText = '등록';
+            addtaskWrap.classList.remove('is-open');
+        }
+    });
+
     const taskList = [];
 
     const AddItem = () => {
@@ -92,11 +104,14 @@
         let todoLength = countElim.length;
         const countnumdv = document.querySelector('#all h2 span')
         countnumdv.innerText = todoLength + '개 남음';
+        if(todoLength == 0){
+            document.querySelector('.nodata').style.display = 'block';
+        }else{
+            document.querySelector('.nodata').style.display = 'none';
+        }
     }
 
     couterItem();
-
-
 
     const btnAddItem = document.querySelector('.btn-todo-save');
     btnAddItem.addEventListener('click',AddItem);
