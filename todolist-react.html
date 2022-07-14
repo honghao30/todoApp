@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>앱</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&family=Roboto:ital@0;1&display=swap');
+            * {
+            box-sizing: border-box;
+            }
+            *:before,
+            *:after {
+            box-sizing: border-box;
+            }
+            html {
+            -webkit-text-size-adjust: none;
+            font-size: 16px;
+            }
+            div,li,dl,hr,span,strong,ul,form,fieldset,legend,textarea,input,select,textarea,button,figure
+            {
+                padding:0;margin:0;
+            }
+            li {list-style: none;}
+            input,
+            button,
+            select {
+            border-radius: 0;
+
+            }
+
+            button {
+            border: 0;
+            background: none;
+            cursor: pointer;
+            }
+
+            button:disabled {
+            cursor: default;
+            }
+
+            body {
+                background: #e9ecef;
+                font-family: 'Nanum Myeongjo', serif;
+            }
+            .wrap {
+                background-color: #fff;
+                border-radius: 12px;
+                padding:50px;
+                margin:20px;
+                box-shadow: 0 0 8px 0 rgb(0 0 0 / 4%);
+            }
+            @media only screen and (max-width: 768px) {
+                .wrap {
+                    padding:20px;
+                }
+            }
+            .wrap h1 {
+                text-align: center;
+                font-size: 36px;
+            }
+            .data__wrap--top {
+                text-align: center;
+                margin:10px 0;
+                font-size: 25px;
+            }
+            .totoList__wrap + .totoList__wrap {
+                margin-bottom:50px;
+            }
+            .totoList__wrap h2 {
+                font-size:26px;
+            }
+            .totoList__wrap h2 span {
+                font-size:16px;
+            }
+            .totolist li {
+                font-size:18px;
+                margin:5px 0;
+                padding:5px 0;
+            }
+            .totolist li .totolist__sub {
+                margin-top:24px;
+            }
+            .totolist li .totolist__sub li {
+                margin:3px 0;
+                font-size:16px;
+            }
+            .totolist li {
+                width:100%;
+
+            }
+            .totolist li .toto-item__wrap {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .btn-sub-add {
+                width:50px;
+                height:50px;
+                font-size:20px;
+            }
+            .totolist li .totolist__sub li input[type='text'] {
+                border:1px solid #e9ecef;
+                height:50px;
+                width:calc(100% - 60px);
+                font-size:16px;
+                text-indent: 10px;
+            }
+            .todoadd__wrap {
+                position: relative;
+                clear: both;
+            }
+            .todoadd__wrap  .btn-add-todo {
+                background: #38d9a9;
+                width:100%;
+                height:50px;
+                color:#fff;
+                font-size:16px;
+                border-radius:6px;
+
+            }
+            .todoadd__form {
+                width:100%;
+                display: block;
+                margin-top:20px;
+            }
+            .todoadd__form .input-todo {
+                width:100%;
+                height:50px;
+                margin: 3px 0;
+                border:1px solid #e9ecef;
+            }
+            .todo-option {
+                clear: both;
+                margin-top: 20px;
+                font-size:16px;
+            }
+            .todo-option input {margin-left: 10px;}
+            .btn-todo-save {
+                background: #f3c300;
+                width:100%;
+                height:50px;
+                color:#fff;
+                font-size:16px;
+                border-radius:6px;
+            }
+            .btn-todo-close {
+                background: #05141f;
+                width:49%;
+                height:50px;
+                color:#fff;
+                font-size:16px;
+                border-radius:6px;
+            }
+            .toto__btn-wrap {
+                margin-top:20px;
+                display: flex;
+                justify-content: space-between;
+            }
+    </style>
+        <div id="App">
+            <!-- <div className="wrap">
+
+                <div className="totoList__wrap">
+                    <h2>목표<span>(2개 남음)</span></h2>
+                    <ul className="totolist">
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    <input type="checkbox" id="todo00">
+                                    <label for="todo00">할일 목록 입니다.</label>
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                    <button type="button" className="btn-modify">M</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    <input type="checkbox" id="todo00">
+                                    <label for="todo00">할일 목록 입니다.</label>
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                    <button type="button" className="btn-modify">M</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    <input type="checkbox" id="todo00">
+                                    <label for="todo00">할일 목록 입니다.</label>
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                    <button type="button" className="btn-modify">M</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className="totoList__wrap">
+                    <h2>완료 할일<span>(2개 남음)</span></h2>
+                    <ul className="totolist">
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    <input type="checkbox" id="todo00">
+                                    <label for="todo00">할일 목록 입니다.</label>
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                    <button type="button" className="btn-modify">M</button>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div> -->
+        </div>
+
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+        console.log("할일");
+
+        const Logo = (props) => {
+            return(
+                <h1>{props.children}</h1>
+            );
+        };
+        const TodayData = () => {
+            const current = new Date();
+            const date = ` ${current.getFullYear()}년 ${current.getMonth()+1} 월 ${current.getDate()} 일`;
+
+            return(
+                <div className="data__wrap--top">
+                    {date}
+                </div>
+            );
+        };
+        const TodoMakeForm = () => {
+
+            function handleSubmit(e){
+                e.preventDefault();
+                console.log("니 내 누군지 아니")
+            }
+
+            return (
+                <div className="todoadd__wrap">
+                    <div className="todoadd__form">
+                        <form onSubmit={handleSubmit}>
+                        <input type="text" className="input-todo" />
+                        <div className="toto__btn-wrap">
+                            <button type="submit" className="btn-todo-save">저장</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            );
+        };
+        const AddedTodoList = () => {
+            return(
+                <div className="totoList__wrap">
+                    <h2>목표<span>(2개 남음)</span></h2>
+                    <ul>
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    <input type="checkbox" id="todo00" />
+                                    <label htmlFor="todo00">할일 목록 입니다.</label>
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                    <button type="button" className="btn-modify">M</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            );
+        };
+        const EndedTodoList = () => {
+            return(
+                <div className="totoList__wrap">
+                    <h2>완료<span>(2개 남음)</span></h2>
+                    <ul>
+                        <li>
+                            <div className="toto-item__wrap">
+                                <div className="todo-items">
+                                    할일 목록 입니다.
+                                </div>
+                                <div className="todo-controll">
+                                    <button type="button" className="btn-remove">X</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            );
+        };
+        const app = (
+            <div className="wrap">
+                <Logo>할일 앱</Logo>
+                <TodayData />
+                <TodoMakeForm />
+                <AddedTodoList />
+                <EndedTodoList />
+            </div>
+        )
+        const renderDom = document.querySelector("#App");
+
+        ReactDOM.render(app,renderDom);
+
+    </script>
+
+</body>
+</html>
